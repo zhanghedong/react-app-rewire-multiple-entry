@@ -1,7 +1,7 @@
 import fs from 'fs';
-import XXH from 'xxhashjs';
+//import XXH from 'xxhashjs';
 
-const H = XXH.h32(0xabcd); // seed = 0xABCD
+//const H = XXH.h32(0xabcd); // seed = 0xABCD
 
 export const formatName = function (name: string) {
   if (!name) {
@@ -11,11 +11,7 @@ export const formatName = function (name: string) {
     name
       .split('/')
       .reverse()[0]
-      .match(/^[^.]*/)[0] +
-    '.' +
-    H.update(name)
-      .digest()
-      .toString(16)
+      .match(/^[^.]*/)[0]
   );
 };
 
